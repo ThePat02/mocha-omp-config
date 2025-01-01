@@ -1,0 +1,96 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "base": "#1e1e2e",
+    "blue": "#89b4fa",
+    "crust": "#11111b",
+    "custom_darker_crust": "#0f0f19",
+    "flamingo": "#f2cdcd",
+    "green": "#a6e3a1",
+    "lavender": "#b4befe",
+    "mantle": "#181825",
+    "maroon": "#eba0ac",
+    "mauve": "#cba6f7",
+    "overlay0": "#6c7086",
+    "overlay1": "#7f849c",
+    "overlay2": "#9399b2",
+    "peach": "#fab387",
+    "pink": "#f5c2e7",
+    "red": "#f38ba8",
+    "rosewater": "#f5e0dc",
+    "sapphire": "#74c7ec",
+    "sky": "#89dceb",
+    "subtext0": "#a6adc8",
+    "subtext1": "#bac2de",
+    "surface0": "#313244",
+    "surface1": "#45475a",
+    "surface2": "#585b70",
+    "teal": "#94e2d5",
+    "text": "#cdd6f4",
+    "yellow": "#f9e2af"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }} ",
+          "foreground": "p:base",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:mauve",
+          "type": "session",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "folder_icon": " \ue5fe ",
+            "home_icon": "~",
+            "style": "agnoster_short",
+            "max_depth": 4
+          },
+          "template": " {{ .Path }} ",
+          "foreground": "p:subtext1",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:custom_darker_crust",
+          "type": "path",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": " {{ .HEAD }} ",
+          "foreground": "p:base",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:peach",
+          "type": "git",
+          "style": "powerline"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "template": " {{ if .Error }}:({{end}} ",
+          "foreground": "p:red",
+          "type": "status",
+          "style": "plain"
+        }
+      ]
+    }
+  ],
+  "version": 3,
+  "final_space": true
+}
